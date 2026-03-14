@@ -1,7 +1,5 @@
 # Strudel Harp Harmony Beat
 
-# Harp Harmonies
-
 A dreamy Strudel beat built from soft piano chords, shimmering harp runs, airy flute touches, and warm bass underneath it all.
 
 This started as one idea and slowly drifted into something more magical, floaty, and emotional. It ended up living somewhere between ambient soul, fantasy inspired chill music, and experimental lo fi textures.
