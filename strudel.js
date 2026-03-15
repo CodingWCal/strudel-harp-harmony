@@ -13,6 +13,17 @@ let drums =
     s("rim ~ rim ~ rim ~ rim ~")
   )
 
+let drumsTwo =
+  stack(
+    s("bd ~ ~ ~ bd ~ ~ ~"),
+    s("~ ~ sd ~ ~ ~ sd ~"),
+    s("~ ~ ~ ~ mt ~ ~ ~"),
+    s("~ ~ ~ ~ bd ~ ~ ~"),
+    s("~ ~ ~ ~ ~ ~ ~ ~"),
+    s("hh ~ hh ~ hh rim*2 ~ hh"),
+    s("rim ~ rim ~ rim ~ rim ~")
+  )
+
 let chords =
   note("<[f3, a3, c4, e4]*2 [g3, c4, d4, f4] [e3, g3, b3, d4]*2 [a3, c4, e4, g4]*4>")
     .sound("piano") 
@@ -26,20 +37,21 @@ let altChords =
     .delay(.2)
     ._pianoroll()
 let harp =
-  note("<[f3 a3 c4 e4 a3 c4 f4 c4] [g3 c4 d4 f4 a3 c4 a4 e4] [e3 g3 b3 d4 a3 c4 a4 e4] [a3 c4 e4 g4 a3 c4 e4 d4]>")
+  note("<[f3 a3 c4 e4 a3 c4 f4 c4] [g3 c4 d4 f4 a3 c4 a4 e4] [e3 g3 b3 d4 a3 c4 e4 a4] [a3 c4 e4 g4 a3 c4 e4 d4]>")
   .sound("harp").lpf(7000)
   .fast(2)
   .delay(.20)
   .gain(1.6)
   ._pianoroll()
-  .scope()
 
 let harp2 =
-  note("<[a4 c5 e5 g5, g6] [a4 b4 d4 e5] [g4 b4 d5 a5, g6] [a4 c5 e5 d5, a5]>")
+  note("<[a4 c5 e5 g5, g6] [a4 b4 d4 e5] [g4 b4 d5 a5, g6 g7] [a4 c5 e5 d5, a5]>")
     .sound("harp")
     .gain(1.5)
     .fast(2)
     .delay(.1)
+    .release(.12)
+    .scope()
     ._pianoroll()
 
 let bass =
@@ -76,5 +88,5 @@ arrange(
   [2, stack(chords, texture)],
   [8, stack(chords, drums, bass, texture)],
   [4, stack(chords, drums, bass, harp, texture)],
-  [8, stack(drums, bass, sub, altChords, harp2, lead, lead2, texture)]
+  [8, stack(drumsTwo, bass, sub, altChords, harp2, lead, lead2, texture)]
 )
